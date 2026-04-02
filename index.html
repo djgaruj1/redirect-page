@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Redirecting...</title>
+<script>
+(function(){
+var p=new URLSearchParams(window.location.search);
+var r=p.get('r');
+if(r){try{window.location.href=atob(r)}catch(e){}}
+})();
+</script>
+</head>
+<body><p>Please wait...</p></body>
+</html>
