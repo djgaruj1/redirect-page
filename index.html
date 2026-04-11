@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>Redirecting...</title>
   <script>
-    var target = new URLSearchParams(window.location.search).get('r');
+    var params = new URLSearchParams(window.location.search);
+    var target = params.get('r');
     if (target) {
       window.location.replace(target);
     }
